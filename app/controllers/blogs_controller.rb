@@ -20,7 +20,8 @@ class BlogsController < ApplicationController
 
   def show
     # 追記する
-    params[:id]
+    @blog = Blog.find(params[:id])
+    # なんでここは[]のかっこなんだろ？
   end
 
 
