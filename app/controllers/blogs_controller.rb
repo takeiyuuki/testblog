@@ -18,6 +18,11 @@ class BlogsController < ApplicationController
     redirect_to new_blog_path
   end
 
+  def show
+    # 追記する
+    params[:id]
+  end
+
 
 
   private
