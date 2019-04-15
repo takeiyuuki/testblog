@@ -15,7 +15,7 @@ class BlogsController < ApplicationController
     # ここのアクション内容は中身を取り出す為に行うコード
      @Blog = Blog.new(blog_params)
       # 一番上の記述を上記に変えた（簡潔にした）
-     if @blog.save
+     if @Blog.save
     # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
     redirect_to new_blog_path,notice:"ブログを作成しました！"
   else
