@@ -17,14 +17,14 @@ class BlogsController < ApplicationController
     # ここのアクション内容は中身を取り出す為に行うコード
      @Blog = Blog.new(blog_params)
       # 一番上の記述を上記に変えた（簡潔にした）
-     if @Blog.save
+      if @Blog.save
     # 一覧画面へ遷移して"ブログを作成しました！"とメッセージを表示します。
     redirect_to new_blog_path,notice:"ブログを作成しました！"
-  else
+      else
     # 入力フォームを再描画します。
     render 'new'
+      end
   end
-end
 
   def show
     # 追記する
@@ -34,7 +34,16 @@ end
 
   def edit
     @blog = Blog.find(params[:id])
+  end
+
+  def update
+    @blog = Blog.find(params[:id])
+    if @blog.update(blog_params) #blog_paramsはストロングパラメータ
+      redirect_to blogs_path, notice: "ブログを編集しました！"
+    else
+      render 'edit'
     end
+  end
 
 
   private
