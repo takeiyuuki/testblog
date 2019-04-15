@@ -1,7 +1,8 @@
 class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
-    binding.pry
+    # binding.pry 一応消しといた。
+    # raise
   end
 
   def new
@@ -31,6 +32,9 @@ end
     # なんでここは[]のかっこなんだろ？
   end
 
+  def edit
+    @blog = Blog.find(params[:id])
+    end
 
 
   private
