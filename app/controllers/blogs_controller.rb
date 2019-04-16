@@ -53,6 +53,10 @@ class BlogsController < ApplicationController
      redirect_to blogs_path, notice:"ブログを削除しました！"
   end
 
+  def confirm
+    @blog = Blog.new(blog_params)
+  end
+
 
   private
 
