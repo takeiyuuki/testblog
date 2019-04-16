@@ -8,3 +8,9 @@
   <p>本文:<%= @blog.content %></p>
   <%= form.submit  "登録する" %>
 <% end %>
+
+<%= form_with(model: @blog, url: new_blog_path, local: true, method: 'get') do |form| %>
+  <%= form.hidden_field :title %> <!--上にもこのコード記載あるけどもう一度ここでこのコードは必要なのか？-->
+  <%= form.hidden_field :content %>
+  <%= form.submit "もどる", name: 'back' %>
+<% end %>
